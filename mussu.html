@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffe6f0 0%, #fffbe6 100%);
+      font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .container {
+      max-width: 700px;
+      margin: 80px auto 0 auto;
+      background: rgba(255,255,255,0.95);
+      border-radius: 32px;
+      box-shadow: 0 8px 32px rgba(255, 182, 193, 0.2);
+      padding: 48px 32px 32px 32px;
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 1.2s cubic-bezier(.23,1.01,.32,1) both;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(60px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      font-family: 'Pacifico', cursive;
+      color: #e75480;
+      font-size: 2.8rem;
+      margin-bottom: 0.5em;
+      text-align: center;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px #fff0f6;
+      animation: flowerPop 1.2s 0.2s both;
+    }
+    @keyframes flowerPop {
+      0% { transform: scale(0.7) rotate(-10deg); opacity: 0; }
+      100% { transform: scale(1) rotate(0); opacity: 1; }
+    }
+    .flowers {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .flower {
+      width: 60px;
+      height: 60px;
+      position: relative;
+      animation: flowerSpin 2.5s cubic-bezier(.23,1.01,.32,1) infinite alternate;
+    }
+    .flower:nth-child(2) { animation-delay: 0.5s; }
+    .flower:nth-child(3) { animation-delay: 1s; }
+    .flower:nth-child(4) { animation-delay: 1.5s; }
+    @keyframes flowerSpin {
+      0% { transform: rotate(-10deg) scale(0.95); }
+      100% { transform: rotate(10deg) scale(1.05); }
+    }
+    .petal {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      background: radial-gradient(circle at 60% 40%, #ffb6c1 70%, #fff0f6 100%);
+      border-radius: 50% 50% 0 50%;
+      transform-origin: 100% 100%;
+    }
+    .petal1 { transform: rotate(0deg) translate(18px, -8px); }
+    .petal2 { transform: rotate(72deg) translate(18px, -8px); }
+    .petal3 { transform: rotate(144deg) translate(18px, -8px); }
+    .petal4 { transform: rotate(216deg) translate(18px, -8px); }
+    .petal5 { transform: rotate(288deg) translate(18px, -8px); }
+    .center {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      width: 28px;
+      height: 28px;
+      background: radial-gradient(circle at 60% 40%, #ffe066 70%, #fffbe6 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 8px #fffbe6;
+      z-index: 2;
+    }
+    .message {
+      font-size: 1.25rem;
+      color: #444;
+      line-height: 1.7;
+      margin: 32px 0 0 0;
+      text-align: center;
+      animation: fadeIn 2s 0.7s both;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .sorry {
+      margin-top: 32px;
+      font-size: 1.1rem;
+      color: #e75480;
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      letter-spacing: 1px;
+      animation: fadeIn 2s 1.2s both;
+    }
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #888;
+      font-size: 1rem;
+      font-family: 'Roboto', sans-serif;
+      animation: fadeIn 2s 1.5s both;
+    }
+    /* Floating flowers */
+    .floating-flower {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.7;
+      z-index: 1;
+      animation: floatFlower 12s linear infinite;
+    }
+    .floating-flower.f1 { left: 5vw; top: 10vh; animation-delay: 0s; }
+    .floating-flower.f2 { right: 8vw; top: 18vh; animation-delay: 2s; }
+    .floating-flower.f3 { left: 15vw; bottom: 12vh; animation-delay: 4s; }
+    .floating-flower.f4 { right: 12vw; bottom: 8vh; animation-delay: 6s; }
+    .floating-flower.f5 { left: 50vw; top: 2vh; animation-delay: 8s; }
+    @keyframes floatFlower {
+      0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.7; }
+      50% { transform: translateY(-30px) scale(1.1) rotate(10deg); opacity: 1; }
+      100% { transform: translateY(0) scale(1) rotate(-10deg); opacity: 0.7; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Flowers -->
+  <div class="floating-flower f1">
+    <div class="flower">
+      <div class="petal petal1"></div>
+      <div class="petal petal2"></div>
+      <div class="petal petal3"></div>
+      <div class="petal petal4"></div>
+      <div class="petal petal5"></div>
+      <div class="center"></div>
+    </div>
+  </div>
+  <div class="floating-flower f2">
+    <div class="flower">
+      <div class="petal petal1"></div>
+      <div class="petal petal2"></div>
+      <div class="petal petal3"></div>
+      <div class="petal petal4"></div>
+      <div class="petal petal5"></div>
+      <div class="center"></div>
+    </div>
+  </div>
+  <div class="floating-flower f3">
+    <div class="flower">
+      <div class="petal petal1"></div>
+      <div class="petal petal2"></div>
+      <div class="petal petal3"></div>
+      <div class="petal petal4"></div>
+      <div class="petal petal5"></div>
+      <div class="center"></div>
+    </div>
+  </div>
+  <div class="floating-flower f4">
+    <div class="flower">
+      <div class="petal petal1"></div>
+      <div class="petal petal2"></div>
+      <div class="petal petal3"></div>
+      <div class="petal petal4"></div>
+      <div class="petal petal5"></div>
+      <div class="center"></div>
+    </div>
+  </div>
+  <div class="floating-flower f5">
+    <div class="flower">
+      <div class="petal petal1"></div>
+      <div class="petal petal2"></div>
+      <div class="petal petal3"></div>
+      <div class="petal petal4"></div>
+      <div class="petal petal5"></div>
+      <div class="center"></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="flowers">
+      <div class="flower">
+        <div class="petal petal1"></div>
+        <div class="petal petal2"></div>
+        <div class="petal petal3"></div>
+        <div class="petal petal4"></div>
+        <div class="petal petal5"></div>
+        <div class="center"></div>
+      </div>
+      <div class="flower">
+        <div class="petal petal1"></div>
+        <div class="petal petal2"></div>
+        <div class="petal petal3"></div>
+        <div class="petal petal4"></div>
+        <div class="petal petal5"></div>
+        <div class="center"></div>
+      </div>
+      <div class="flower">
+        <div class="petal petal1"></div>
+        <div class="petal petal2"></div>
+        <div class="petal petal3"></div>
+        <div class="petal petal4"></div>
+        <div class="petal petal5"></div>
+        <div class="center"></div>
+      </div>
+    </div>
+    <h1>For My Mussu Rani</h1>
+    <div class="message">
+      <p>My dearest <b>Mussu Rani</b>,<br><br>
+      It truly hurts me when you feel I am not serious, but please know, from the depths of my heart, I have never thought that way. I cherish, respect, and love you more than words can say. Your happiness means the world to me, and I can't bear to see you in pain. I want nothing more than to walk this beautiful journey of life with you, hand in hand, our destinies forever entwined.<br><br>
+      I promise to always be by your side, to stand with you in any circumstances My love for you is genuine, unwavering, and eternal. <br><br><b>Mai hamesha tere saath hu aur rahunga, meri jaan.</b></p>
+    </div>
+    <div class="sorry">
+      <p>If I have ever hurt you, in any way, I am truly sorry. But remember, I am a man of my words, and I will always stand by them—and by you.</p>
+    </div>
+    <div class="footer">
+      With all my love,<br>Yours forever
+    </div>
+  </div>
+</body>
+</html>
